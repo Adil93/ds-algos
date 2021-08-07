@@ -1,11 +1,23 @@
+/*
+
+In both average and worst case:
+
+    Time Complexity : O(nlogn)
+    Space Complexity: O(n)
+
+Suitable for linked list sorting
+
+ */
+package sort;
+
+import utils.ArrayUtils;
+
 public class MergeSort {
     public static void main(String args[]) {
-        MergeSort merger = new MergeSort();
+        MergeSort sort = new MergeSort();
         int[] arr = new int[] { 1, 2, 9, -1, 7, 8, 4 };
-        merger.mergeSort(arr, 0, arr.length - 1);
-
-        for (int i = 0; i < arr.length; i++)
-            System.out.println(arr[i]);
+        sort.mergeSort(arr, 0, arr.length - 1);
+        ArrayUtils.printArray(arr);
     }
 
     public void mergeSort(int[] arr, int left, int right) {
@@ -20,7 +32,7 @@ public class MergeSort {
     public void merge(int[] arr, int left, int mid, int right) {
         int k = 0, i = left, j = mid + 1;
         int[] temp = new int[(right - left) + 1];
-        
+
         while (i <= mid && j <= right) {
             if (arr[i] < arr[j]) {
                 temp[k++] = arr[i++];
