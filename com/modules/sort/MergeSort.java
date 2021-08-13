@@ -13,7 +13,7 @@ package sort;
 import utils.ArrayUtils;
 
 public class MergeSort {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         MergeSort sort = new MergeSort();
         int[] arr = new int[] { 1, 2, 9, -1, 7, 8, 4 };
         sort.mergeSort(arr, 0, arr.length - 1);
