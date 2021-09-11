@@ -12,7 +12,7 @@ public class CharacterFreequencySort {
         System.out.println(freequentCharInString("aaabbccctttt", 2));
     }
 
-    public static char freequentCharInString(String input, int k) {
+    public static List<String> freequentCharInString(String input, int k) {
         char[] inputs = input.toCharArray();
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
@@ -25,8 +25,9 @@ public class CharacterFreequencySort {
         }
 
         List<Map.Entry<Character, Integer>> mapList = new ArrayList<Map.Entry<Character, Integer>>(map.entrySet());
-        Collections.sort(mapList, (entry1, entry2) -> entry1.getValue().compareTo(entry2.getValue()));
-        return mapList.get(k).getKey();
+        Collections.sort(mapList, (entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
+
+        return mapList.subList(0, k).stream().map(entry -> entry.getKey().toString()).toList();
 
     }
 }

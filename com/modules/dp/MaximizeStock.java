@@ -3,9 +3,11 @@ package dp;
 import java.util.Arrays;
 import java.util.List;
 
+// One buy in each day and multiple sell in another day
 public class MaximizeStock {
     public static void main(String[] args) {
-        List<Integer> stockList = Arrays.asList(1, 2, 100);
+        // List<Integer> stockList = Arrays.asList(1, 2, 100);
+        List<Integer> stockList = Arrays.asList(1, 30, 5, 8, 20, 15);
 
         long maxProfit = getMaximumProfit(stockList);
         System.out.println(maxProfit);
