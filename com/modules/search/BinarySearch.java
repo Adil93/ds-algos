@@ -12,7 +12,7 @@ public class BinarySearch {
 
     public int binarySearch(int[] arr, int low, int high, int elem) {
         if (low <= high) {
-            int mid = (high + low) / 2;
+            int mid = low + ((high - low) / 2);
             if (arr[mid] == elem)
                 return mid;
             if (arr[mid] > elem)
